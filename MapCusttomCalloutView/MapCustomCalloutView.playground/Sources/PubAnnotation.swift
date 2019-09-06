@@ -11,7 +11,7 @@ import MapKit
 
 public class PubAnnotation: NSObject, MKAnnotation {
     public var coordinate: CLLocationCoordinate2D
-    var isSelected = false
+    var isSelected = true
     var name: String?
     var title: String?
     var subtitle: String?

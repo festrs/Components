@@ -40,22 +40,22 @@ public class PubAnnotationView: MKAnnotationView {
     // If the annotation is selected, show the callout; if unselected, remove it
     
     public override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        //super.setSelected(selected, animated: animated)
         guard let unAnnotation = annotation else { return }
-        if selected {
-            self.calloutView?.removeFromSuperview()
-            
-            let calloutView = AnnotationDialogView(annotation: unAnnotation)
-            calloutView.add(to: self)
-            self.calloutView = calloutView
-            
-            if animated {
-                calloutView.alpha = 0
-                UIView.animate(withDuration: animationDuration) {
-                    calloutView.alpha = 1
-                }
-            }
-        } else {
+//        if selected {
+//            self.calloutView?.removeFromSuperview()
+//
+//            let calloutView = AnnotationDialogView(annotation: unAnnotation)
+//            calloutView.add(to: self)
+//            self.calloutView = calloutView
+//
+//            if animated {
+//                calloutView.alpha = 0
+//                UIView.animate(withDuration: animationDuration) {
+//                    calloutView.alpha = 1
+//                }
+//            }
+//        } else {
             guard let calloutView = calloutView else { return }
             
             if animated {
@@ -67,7 +67,7 @@ public class PubAnnotationView: MKAnnotationView {
             } else {
                 calloutView.removeFromSuperview()
             }
-        }
+//        }
     }
     
     // Make sure that if the cell is reused that we remove it from the super view.
